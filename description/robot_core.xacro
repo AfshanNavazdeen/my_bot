@@ -56,6 +56,12 @@
         <xacro:inertial_box mass='0.5' x='0.3' y='0.3' z='0.15'>
             <origin xyz="0.15 0.0 0.075" rpy="0.0 0.0 0.0"/>
         </xacro:inertial_box>
+        
+        <!-- adding a gazebo referebnce to the material/color -->
+        <gazebo reference="chassis_link">
+            <material>Gazebo/white</material>
+        </gazebo>
+        
     </link>
 
 
@@ -87,6 +93,11 @@
             <origin xyz='0 0 0' rpy='0 0 0'/>
         </xacro:inertial_cylinder>
     </link>
+    <!-- adding a gazebo referebnce to the material/color -->
+    <gazebo reference="left_wheel">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+
 
     <!-- Right Wheel Link -->
     <joint name="right_wheel_joint" type="continuous">
@@ -114,6 +125,10 @@
             <origin xyz='0 0 0' rpy='0 0 0'/>
         </xacro:inertial_cylinder>
     </link>
+    <!-- adding a gazebo referebnce to the material/color -->
+    <gazebo reference="right_wheel">
+        <material>Gazebo/Blue</material>
+    </gazebo>
 
     <!-- Caster Wheel -->
     <joint name="caster_wheel_joint" type="fixed">
@@ -139,5 +154,14 @@
             <origin xyz='0 0 0' rpy='0 0 0'/>
         </xacro:inertial_sphere>
     </link>
+    <!-- adding a gazebo referebnce to the material/color -->
+    <gazebo reference="caster_wheel">
+        <material>Gazebo/Black</material>
+        
+        <!-- Setting the friction of the caster wheel to a minimum value -->
+        <mu1 value="0.0001"/>
+        <mu2 value="0.0001"/>
+
+    </gazebo>
 
 </robot>
